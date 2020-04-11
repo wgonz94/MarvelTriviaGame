@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Marvel Trivia!</title>
+</head>
+<body>
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1></h1>
+            <p></p>
+        </div>
+    </div>
+
+    <!-- Container --> 
+    <div class="container">
+
+        <!-- 1st Row [Title] -->
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                <h1 id="title">Marvel Trivia</h1>
+            </div>
+        </div>
+
+        <!-- 2nd Row [Game Board]-->
+        <div class="row" id="boardRow">
+            <div class="col-sm-12 col-md-6 col-offset-3 col-lg-6 col-md-offset-3" id="startCol">
+                <div class="startDiv">
+                    <div class="start">
+                        <button id="startBtn"> Let's Start! </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="gameRow">
+            <div class=" col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-md-offset-3" id="gameCol">
+
+                <!-- Each Question -->
+                <div id="currentQue"></div>
+                <div id="timer"></div>
+                <div class="question"></div>
+                <div class="answerChoices"></div>
+
+                <!-- Message after Question -->
+                <div id="message"></div>
+                <div id="revealedAnswer"></div>
+                <div id="gif"></div>
+                <div id="gifMessage"></div>
+
+                <!-- End Results -->
+                <div id="endMessage"></div>
+                <div id="correct"></div>
+                <div id="incorrect"></div>
+                <div id="unanswered"></div>
+                <div id="resetButton"></div>
+
+            </div>
+        </div>
+    
+    </div>
+    
+
+    <!-- jQuery CDN Script/Link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- My Javascript Script/Link -->
+    <script src="./javascript/app.js"></script>
+
+</body>
+</html>
