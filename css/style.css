@@ -1,0 +1,46 @@
+body{
+    background-color: #000000;
+}
+div.container{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+div.jumbotron{
+    background-image: url('./../images/background.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 300px;
+    min-height: 50%;
+    width: 100%;
+
+}
+#title{
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -5px;
+    background-color: #e23636;
+    color: white;
+    /* width: 500px; */
+}
+button{
+    margin-top: 45px;
+    background-color: #504a4a;
+    color: white;
+    border: white solid 1px;
+    font-size: 200%;
+    font-weight: 700;
+    text-transform: uppercase;
+    height: 150px;
+    width: 400px;
+    position: absolute;
+    left: 375px;
+    transition: 0.3s;
+}
+
+button:hover{
+    background-color:  #e23636;
+}
+
