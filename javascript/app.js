@@ -92,5 +92,74 @@ $(document).ready(function(){
         newGame();
     })
 
+    // displays new game, clears areas of the Game
+    function newGame(){
+        $("#gameCol").show();
+        $("#endMessage").empty();
+        $("#correct").empty();
+        $("#incorrect").empty();
+        $("#unanswered").empty();
+        currentQuestion = 0;
+        correctAns = 0;
+        incorrectAns = 0;
+        unanswered = 0;
+        newQuestion();
+    }
+
+    // next question
+    function newQuestion(){
+        $("#message").empty();
+        $("#revealedAnswer").empty();
+        answered = true;
+
+        //displays new question
+        $("#currentQuestion").html("Question " + (currentQuestion + 1) + " of " + triviaVault.length);
+        $(".question").html(triviaVault[currentQuestion].question)
+
+        //generates answer choices for each new question.
+        for(let i = 0; i < 4; i++){
+            let choices = $("<div>");
+            choices.text(triviaVault[currentQuestion].answerList[i]);
+            choices.attr({"data-index": i });
+            choices.addClass("thisChoice");
+            $(".answerList").append(choices)
+        }
+
+        //countDown Timer
+        countDown();
+
+        //stops timer and reveals answer
+        $(".thisChoice").on("click", function() {
+            selected = $(this).data("index");
+            clearInterval(time);
+            revealPage();
+        })
+    }
+
+    function countDown() {
+        seconds = 15;
+        $("#timer").html("00:" + seconds);
+        answered = true;
+        //delay timer 
+        time = setInterval(showCountdown, 1000);
+    }
+
+    function showCountdown() {
+        seconds--;
+
+        if(seconds < 10) {
+            $("#timer").html("00:0" + seconds)
+        } else{
+            $("#timer").html("00:" + seconds)
+        }
+
+        if(seconds < 1) {
+            clearInterval(time);
+            answered = false;
+            revealPage();
+        }
+    }
+
+
 
 })
