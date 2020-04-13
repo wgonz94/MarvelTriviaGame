@@ -160,6 +160,39 @@ $(document).ready(function(){
         }
     }
 
+    //displays correct answer with reveal page
+    function revealPage() {
+        $("#currentQue").empty();
+        $(".thisChoice").empty();
+        $(".question").empty();
+
+        let rightAnswerText = triviaVault[currentQuestion].answerList[triviaVault[currentQuestion].answer];
+        let rightAnswerIndex = triviaVault[currentQuestion].answer;
+
+        //check to see if user choice is correct, incorrect, or unanswered
+        if((selected == rightAnswerIndex) && (answered === true)){
+            correctAns++;
+            $("#message").html(messages.correct);
+        } else if((selected != rightAnswerIndex) && (answered === true)){
+            incorrectAns++;
+            $("#message").html(messages.incorrect);
+            $("#revealedAnswer").html("The correct answer was: " + rightAnswerText)
+        } else {
+            unanswered++;
+            $("#message").html(messages.incorrect);
+            $("#revealedAnswer").html("The correct answer was: " + rightAnswerText)
+            answered = true;
+        }
+
+        if(currentQuestion == (triviaVault.length-1)){
+            setTimeout(scoreboard, 6000);
+        } else {
+            currentQuestion++
+            setTimeout(newQuestion, 6000);
+        }
+
+    }
+
 
 
 })
