@@ -193,6 +193,20 @@ $(document).ready(function(){
 
     }
 
+    //display scores of the quiz/trivia
+    function scoreboard() {
+
+        $("#timer").empty();
+        $("#message").empty();
+        $("#correct").empty();
+
+        $("#endMessage").html(messages.finished);
+        $("#correct").html("Correct Answers: " + correctAns);
+        $("#incorrect").html("Incorrect Answers: " + incorrectAns);
+        $("#unanswered").html("Unanswered: "+ unanswered);
+        
+    }
+
 
 
 })
