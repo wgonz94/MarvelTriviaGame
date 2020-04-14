@@ -59,6 +59,11 @@ color: white;
 #revealedAnswer{
     color: green;
 }
+.gifImg{
+    float: right;
+    width: 300px;
+    
+}
 
 @media screen and (max-width: 375px) {
     button {

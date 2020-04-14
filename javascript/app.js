@@ -36,40 +36,44 @@ $(document).ready(function(){
             question: "What is Spiderman's True Identity?",
             answerList: ["Tony Stark", "Flash Thompson", "Eddie Brock", "Peter Parker"],
             answer: 3,
-            // image: "",
+            image: "./../images/spiderman.gif"
         },
         {
             question: "Which one of these characters is NOT a superhero?",
             answerList: ["Iceman", "The Punisher", "DareDevil", "Black Panther"],
             answer: 1,
+            image: "./../images/punisher.gif"
         },
         {
             question: "Who created Ultron?",
             answerList: ["Tony Stark", "Reed Richards", "Hank Pym", "The Mandarin"],
             answer: 2,
+            image: "./../images/pym.gif"
         },
         {
             question: "What is the Matt Murdocks Occupation?",
             answerList: ["Detective", "Lawyer", "Boxer", "Judge"],
             answer: 1,
+            image: "./../images/job.gif"
         },
         {
             question: "Who founded the X-Men?",
             answerList: ["S.H.E.I.L.D.", "Spiderman", "X-Force", "Charles Xavier"],
             answer: 3,
+            image: "./../images/charles.gif"
 
         },
         {
             question: "Who was the first Super Solider?",
             answerList: ["Wolverine", "Bucky Barnes", "Steve Rogers", "Natasha Romanova"],
             answer: 2,
-
+            image: "./../images/first.gif"
         },
         {
             question: "Who is the Leader of the Fantastic 4?",
             answerList: ["Mr. Fantastic", "Johnny Storm", "Danny Rand", "Dr. Doom"],
             answer: 0,
-
+            image: "./../images/leader.gif"
         }
     ]
 
@@ -110,6 +114,7 @@ $(document).ready(function(){
     function newQuestion(){
         $("#message").empty();
         $("#revealedAnswer").empty();
+        $("#gif").hide();
         answered = true;
 
         //displays new question
@@ -165,9 +170,17 @@ $(document).ready(function(){
         $("#currentQue").empty();
         $(".thisChoice").empty();
         $(".question").empty();
+        $("#gif").show()
 
         let rightAnswerText = triviaVault[currentQuestion].answerList[triviaVault[currentQuestion].answer];
         let rightAnswerIndex = triviaVault[currentQuestion].answer;
+
+        //gives each question a gif to show after answering each question
+        let gifImage = triviaVault[currentQuestion].image;
+        let gifTag = $("<img>");
+        gifTag.attr("src", gifImage);
+        gifTag.addClass("gifImg");
+        $("#gif").html(gifTag);
 
         //check to see if user choice is correct, incorrect, or unanswered
         if((selected == rightAnswerIndex) && (answered === true)){
@@ -200,6 +213,7 @@ $(document).ready(function(){
         $("#message").empty();
         $("#revealedAnswer").empty();
         $("#correct").empty();
+        $('#gif').hide();
 
         $("#endMessage").html(messages.finished);
         $("#correct").html("Correct Answers: " + correctAns);
