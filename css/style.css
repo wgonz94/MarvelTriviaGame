@@ -43,4 +43,7 @@ button{
 button:hover{
     background-color:  #e23636;
 }
+#timer, .question, .answerChoices, #message, #revealedAnswer,#endMessage, #correct, #incorrect, #unanswered,#resetBtn{
+color: white;
+}
 

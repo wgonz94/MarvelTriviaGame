@@ -122,7 +122,7 @@ $(document).ready(function(){
             choices.text(triviaVault[currentQuestion].answerList[i]);
             choices.attr({"data-index": i });
             choices.addClass("thisChoice");
-            $(".answerList").append(choices)
+            $(".answerChoices").append(choices)
         }
 
         //countDown Timer
@@ -198,13 +198,18 @@ $(document).ready(function(){
 
         $("#timer").empty();
         $("#message").empty();
+        $("#revealedAnswer").empty();
         $("#correct").empty();
 
         $("#endMessage").html(messages.finished);
         $("#correct").html("Correct Answers: " + correctAns);
         $("#incorrect").html("Incorrect Answers: " + incorrectAns);
         $("#unanswered").html("Unanswered: "+ unanswered);
-        
+
+        $("#resetBtn").addClass("restart");
+        $("#resetBtn").show();
+        $("#resetBtn").html("Play Another Game?")
+
     }
 
 
