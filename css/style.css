@@ -43,7 +43,28 @@ button{
 button:hover{
     background-color:  #e23636;
 }
-#timer, .question, .answerChoices, #message, #revealedAnswer,#endMessage, #correct, #incorrect, #unanswered,#resetBtn{
+#timer, .question, .answerChoices, #message,#endMessage, #correct, #incorrect, #unanswered,#resetBtn{
 color: white;
 }
 
+.question{
+    margin-top: 35px;
+}
+.answerChoices{
+    margin: 20px;
+}
+.thisChoice:hover{
+    color: red;
+}
+#revealedAnswer{
+    color: green;
+}
+
+@media screen and (max-width: 375px) {
+    button {
+        position: unset;
+        left: unset;
+        float: left;
+        width: 100%;
+    }
+}
